@@ -45,7 +45,7 @@ if (canvas.getContext) {
         fill:       '#fa5656',
     }
 
-    localStor();
+    localStor(); //локальное хранилище рекорда
     function localStor() {
         if (localStorage.getItem('record')) {
             snake.recordFoot = localStorage.getItem('record');
@@ -57,7 +57,7 @@ if (canvas.getContext) {
     }
     
 
-    function animate(now) {
+    function animate(now) { // прорисовка анимации при запуске
         requestAnimationFrame(animate);
 
         let delta = now - then; 
@@ -70,7 +70,7 @@ if (canvas.getContext) {
         }
     }
 
-    document.addEventListener('keydown', control);
+    document.addEventListener('keydown', control); //движение змеи
     function control(event) {
         animate(performance.now());
         e = event.keyCode;
@@ -84,7 +84,7 @@ if (canvas.getContext) {
     }
     
     drawSnake();
-    function drawSnake() {
+    function drawSnake() { // прорисовка змеи при движении и съедании еды
         ambit(); 
         
         ctx.fillStyle = snake.fill;
@@ -135,12 +135,12 @@ if (canvas.getContext) {
         if (snake.y + snake.moveY < 0) snake.y = mapHeight
     }
 
-    function drawFoot() {
+    function drawFoot() { //прорисовка еды
         ctx.fillStyle = foot.fill;
         ctx.fillRect(foot.x, foot.y, snake.w, snake.h);
     }
 
-    function positionFoot() {
+    function positionFoot() { //позиция еды
         let x = randomX();
         let y = randomY();
         let overlapping = false;

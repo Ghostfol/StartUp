@@ -8,7 +8,7 @@ function drawBlock (x,y) { //Нарисовать фигуру в позиции
  ctx.strokeRect (blockWidth*x, blockHeight*y, blockWidth-1, blockHeight-1);
 }
 
-function render() { //Нарисовать стакан и фигуры
+function render() { //Нарисовать поле и фигуры
  ctx.clearRect( 0, 0, width, height );
  ctx.strokeStyle = 'black';
  for (var x=0; x<columns; x++) {
