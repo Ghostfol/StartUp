@@ -26,6 +26,12 @@ p {
     flex-wrap: wrap;
 }
 
+.Flappy{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 
 .button {
     display: inline-block;
